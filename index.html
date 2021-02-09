@@ -24,7 +24,8 @@
   <h1>FAQ</h1>
   <div class="element">
     <div class="question">
-  How many team members can I invite?
+  How many team members can I invite?  
+<img class="arrow" src="images/icon-arrow-down.svg">
   </div>
   <div class="answer">
   You can invite up to 2 additional users on the Free plan. There is no limit on 
@@ -34,7 +35,8 @@
 
   <div class="element">
     <div class="question">
-  What is the maximum file upload size?
+  What is the maximum file upload size?  
+  <img class="arrow" src="images/icon-arrow-down.svg">
   </div>
   <div class="answer">
   No more than 2GB. All files in your account must fit your allotted storage space.
@@ -42,7 +44,8 @@
     </div>
   <div class="element">
   <div class="question">
-  How do I reset my password?
+  How do I reset my password?  
+  <img class="arrow" src="images/icon-arrow-down.svg">
   </div>
   <div class="answer">
   Click “Forgot password” from the login page or “Change password” from your profile page.
@@ -51,7 +54,8 @@
 </div>
 <div class="element">
   <div class="question">
-  Can I cancel my subscription?
+  Can I cancel my subscription?  
+  <img class="arrow" src="images/icon-arrow-down.svg">
   </div>
   <div class="answer">
   Yes! Send us a message and we’ll process your request no questions asked.
@@ -59,7 +63,8 @@
 </div>
 <div class="element">
   <div class="question">
-  Do you provide additional support?
+  Do you provide additional support?  
+  <img class="arrow" src="images/icon-arrow-down.svg">
   </div>
   <div class="answer">
   Chat and email support is available 24/7. Phone lines are open during normal business hours.
@@ -76,8 +81,13 @@
 -->  
 </body>
 <footer>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.linkedin.com/in/nicolas-couraud/">Nicolas</a>.
+  </div>
 <script> 
   reportWindowSize();
+
   window.addEventListener('resize', reportWindowSize);
   function reportWindowSize(){
   if (window.innerWidth < 640){
@@ -97,8 +107,32 @@
   function displayDesktop(){
     document.getElementById("mobile").style.display="none"; 
     document.getElementById("desktopOut").style.display="block"; 
-    document.getElementById("desktopIn").style.display="block"; 
+    document.getElementById("desktopIn").style.display="block";
   }
+
+
+
+
+
+  document.querySelector(".faq").addEventListener('click', function(event){
+    //clic sur question
+    var targeted = event.target; 
+    if(targeted.className == "arrow" || targeted.className.indexOf("arrow") >= 0){
+      //clic sur la flèche
+      targeted = targeted.parentNode;   
+    }
+    if(targeted.className == "question" || targeted.className.indexOf("question") >= 0){
+      targeted.classList.toggle('selected');
+      targeted.childNodes[1].classList.toggle('selected');
+      if (targeted.parentNode.childNodes[3].style.display != 'block'){
+        targeted.parentNode.childNodes[3].style.display = 'block';
+      } else {
+        targeted.parentNode.childNodes[3].style.display = 'none';
+      }    
+    }
+  })
+
+
   </script>
   </footer>
 </html>
