@@ -15,10 +15,10 @@
   <div id="whiteBox">
     <img id="mobile" src='images/illustration-woman-online-mobile.svg'>
 
-
     <img id="desktopOut" src="images/illustration-box-desktop.svg">  
     <div class="cropImage">
     <img id="desktopIn" src="images/illustration-woman-online-desktop.svg">
+    <img id="desktopShadow" src="images/bg-pattern-desktop.svg">
     </div>
   <div class="faq">
   <h1>FAQ</h1>
@@ -102,12 +102,14 @@
   document.getElementById("mobile").style.display="block"; 
   document.getElementById("desktopOut").style.display="none"; 
   document.getElementById("desktopIn").style.display="none"; 
+  document.getElementById("desktopShadow").style.display="none";
   }
 
   function displayDesktop(){
     document.getElementById("mobile").style.display="none"; 
     document.getElementById("desktopOut").style.display="block"; 
     document.getElementById("desktopIn").style.display="block";
+    document.getElementById("desktopShadow").style.display="block";
   }
 
 
